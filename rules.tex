@@ -1,0 +1,67 @@
+%And elimination
+\newcommand{\andE}[1]
+{
+$\land \mathrm{E}(#1)$
+}
+
+%And introduction
+\newcommand{\andI}[2]
+{
+$\land \mathrm{I}(#1,#2)$
+}
+
+\newcommand{\ass} {\sout{Assume}}
+\newcommand{\giv} {Given}
+
+%See lemma command \slem{key}{applied to...}
+\newcommand{\slem}[2]
+{
+Apply Lemma #1(#2)
+}
+
+%not not introduction
+\newcommand{\nnI}[1]
+{
+$ \lnot\lnot \mathrm{I}(#1) $
+}
+
+%or elimination
+\newcommand{\orE}[2]
+{
+$ \lor \mathrm{E}(#1,#2) $
+}
+
+%or introduction
+\newcommand{\orI}[1]
+{
+$ \lor \mathrm{I}(#1) $
+}
+
+%arrow introduction
+\newcommand{\arrowI}[2]
+{
+$\to \mathrm{I}(#1,#2) $
+}
+
+%arrow eliminate
+\newcommand{\arrowE}[2]
+{
+$\to \mathrm{E}(#1,#2) $
+}
+
+%double arrow eliminate
+\newcommand{\iffE}[1]
+{
+$\leftrightarrow \mathrm{E}(#1)$
+}
+
+\newcommand{\eqn}[1]
+{
+Equation #1%
+}
+
+% Reductio Ad Absurdum
+\newcommand{\raa}[3]
+{
+RAA(#1,#2,#3)
+}
