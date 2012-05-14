@@ -452,10 +452,10 @@ This contains various induction style proofs. There are probably mistakes. The s
 		    \fa \fh \exists X p(X) & \ass \\ %2
 		      \fa \fa \fh p(a) & \ass \\ %3
 		        \fa \fa \fa \fh \exists X p(X) & \ass \\ %4
-		        \fa \fa \fa \fa \lnot p(a) & \forallE{4} \\ %5
+		        \fa \fa \fa \fa \lnot p(a) & \forallE{1} \\ %5
 		      \fa \fa \fa \lnot \exists X p(X) & \raa{4}{3}{5} \\%6
         \fa \fa \lnot \exists X p(X) & \existsE{2}{3}{6} \\ %7
-		  \fa \lnot \exists X p(X) & \existsE{2}{2}{7} \\ %8
+		  \fa \lnot \exists X p(X) & \raa{2}{2}{7} \\ %8
       
 		\end{fitch}
 	\end{equation*}
