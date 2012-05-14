@@ -75,8 +75,9 @@ This contains various induction style proofs. There are probably mistakes. The s
 		\begin{fitch}
 		\fa \lnot A \lor B & \giv \\ %1
 			\fa\fh A & \ass \\ %2 
-			\fa\fa B & \orE{1}{2} \\ %3 
-		\fa A \to B & \arrowI{2}{3} %4
+			\fa\fa \lnot\lnot A & Double Negation Rule{3} \\ %3 
+			\fa\fa B & \orE{1}{3}\\ %4
+		\fa A \to B & \arrowI{2}{4} %5
 		\end{fitch}
 	\end{equation*}
 
