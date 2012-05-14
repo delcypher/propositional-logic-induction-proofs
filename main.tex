@@ -427,7 +427,51 @@ This contains various induction style proofs. There are probably mistakes. The s
 	\end{equation*}
 	
 	
+	
 
 
 
+\section{Predicate Logic Equivalences}
+  \subsection{DeMorgan's rule: \texorpdfstring{ $ \lnot \exists X p(X) \equiv \forall X \lnot p(X) $}{DeMorgan}}
+	
+	$ \lnot \exists X p(X) \vdash \forall X \lnot p(X) $
+		\begin{equation*}
+		\begin{fitch}
+  		\fa \lnot \exists X p(X) & \giv \\ %1
+  			\fa\fh p(a) & \ass \\ %2
+        \fa\fa \exists X p(X) & \existsI{2} \\ %3
+      \fa \lnot p(a) & \raa{2}{1}{3}  \\ %4
+      \fa \forall X \lnot p(X) & \forallI{4} \\%5
+		\end{fitch}
+	\end{equation*}
+
+	$ \forall X \lnot p(X) \vdash \lnot \exists X p(X) $
+	\begin{equation*}
+		\begin{fitch}
+		  \fa \forall X \lnot p(X) & \giv \\ %1
+		    \fa \fh \exists X p(X) & \ass \\ %2
+		      \fa \fa \fh p(a) & \ass \\ %3
+		        \fa \fa \fa \fh \exists X p(X) & \ass \\ %4
+		        \fa \fa \fa \fa \lnot p(a) & \forallE{4} \\ %5
+		      \fa \fa \fa \lnot \exists X p(X) & \raa{4}{3}{5} \\%6
+        \fa \fa \lnot \exists X p(X) & \existsE{2}{3}{6} \\ %7
+		  \fa \lnot \exists X p(X) & \existsE{2}{2}{7} \\ %8
+      
+		\end{fitch}
+	\end{equation*}
+	
+	\subsection{DeMorgan's rule: \texorpdfstring{ $ \lnot \forall X p(X) \equiv \exists X \lnot p(X) $}{DeMorgan}}
+  $ \lnot \forall X p(X) \vdash \exists X \lnot p(X) $
+	  \begin{equation*}
+		  \begin{fitch}
+		    
+	    \end{fitch}
+  	\end{equation*}
+  
+  $ \exists X \lnot p(X) \vdash \lnot \forall X p(X) $
+    \begin{equation*}
+  	  \begin{fitch}
+
+      \end{fitch}
+  	\end{equation*}
 \end{document}
