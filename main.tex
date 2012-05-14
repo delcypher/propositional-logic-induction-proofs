@@ -464,14 +464,27 @@ This contains various induction style proofs. There are probably mistakes. The s
   $ \lnot \forall X p(X) \vdash \exists X \lnot p(X) $
 	  \begin{equation*}
 		  \begin{fitch}
-		    
+		    \fa \lnot \forall X p(X) & \giv \\ %1
+		      \fa \fh \lnot \exists X \lnot p(X) & \ass \\ %2
+		        \fa \fa \fh \lnot p(a) & \ass \\ %3
+		        \fa \fa \fa \exists X \lnot p(X) & \existsI{3} \\ %4
+		      \fa \fa p(a) & \raa{3}{2}{4} \\ %5
+		      \fa \fa \forall X p(X) & \forallI{5} - since assumption in 3 has now been discharged, $a$ is just an arbitrary constant\\ %6
+		    \fa \exists X \lnot p(X) & \raa{2}{1}{6} \\
 	    \end{fitch}
   	\end{equation*}
   
   $ \exists X \lnot p(X) \vdash \lnot \forall X p(X) $
     \begin{equation*}
   	  \begin{fitch}
-
+        \fa \exists X \lnot p(X) & \giv \\ %1
+          \fa \fh \forall X p(X) & \ass \\ %2
+            \fa \fa \fh \lnot p(a) & \ass \\ %3
+              \fa \fa \fa \fh \exists X \lnot p(X) & \ass \\ %4
+              \fa \fa \fa \fa p(a) & \forallE{2} \\ %5
+            \fa \fa \fa \lnot \exists X \lnot p(X) & \raa{4}{3}{5} \\ %6
+          \fa \fa \lnot \exists X \lnot p(X) & \existsE{1}{3}{6} \\ %7
+        \fa \lnot \forall X p(X) & \raa{2}{1}{7} \\ %8
       \end{fitch}
   	\end{equation*}
 \end{document}
