@@ -1,3 +1,5 @@
+%%%These are handy short hands for each of the inference rules.
+
 %And elimination
 \newcommand{\andE}[1]
 {
@@ -10,13 +12,16 @@ $\land \mathrm{E}(#1)$
 $\land \mathrm{I}(#1,#2)$
 }
 
+%Assume
 \newcommand{\ass} {\sout{Assume}}
+
+%Given
 \newcommand{\giv} {Given}
 
-%See lemma command \slem{key}{applied to...}
-\newcommand{\slem}[2]
+%See lemma command \slem{key}{line applied to}
+\newcommand{\alem}[2]
 {
-Apply Lemma #1(#2)
+Apply Lemma \ref{#1} to #2
 }
 
 %not not introduction
@@ -55,10 +60,6 @@ $\to \mathrm{E}(#1,#2) $
 $\leftrightarrow \mathrm{E}(#1)$
 }
 
-\newcommand{\eqn}[1]
-{
-Equation #1%
-}
 
 % Reductio Ad Absurdum
 \newcommand{\raa}[3]
