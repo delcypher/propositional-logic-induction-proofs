@@ -43,7 +43,7 @@
 
 %opening
 \title{Logic Inference proofs}
-\author{Daniel Liew, Henry Addison}
+\author{Daniel Liew, Henry Addison \& Ruby Childs}
 
 \begin{document}
 \maketitle
@@ -380,6 +380,19 @@ This contains various deduction style proofs. There are probably mistakes. The s
 			\fa A \lor \lnot A & \raa{1}{3}{4} \\ %5
 		\end{fitch}
 	\end{equation*}
+
+	Alternative proof not relying on a lemma. Provided by Ruby Childs.
+	\begin{equation*}
+		\begin{fitch}
+				\fa\fh \lnot( A \lor \lnot A) & \ass \\ %1
+					\fa\fa\fh \lnot A & \ass \\ %2
+					\fa\fa\fa A \lor \lnot A & \orI{2} \\ %3
+				\fa\fa A & \raa{2}{1}{3} \\ %4
+				\fa\fa A \lor \lnot A & \orI{4} \\ %5
+			A \lor \lnot A & \raa{1}{1}{5} \\ %6
+		\end{fitch}
+	\end{equation*}
+	
 	
 	
 	\subsection{Proof By Cases: \texorpdfstring{$ A \lor B, A \to C, B \to C \vdash C$}{} }
